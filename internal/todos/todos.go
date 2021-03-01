@@ -40,7 +40,7 @@ func (todo Todo) Save() int64 {
 // GetAll mengambil semua data Todo pada database, return berupa array Todo
 func GetAll() []Todo {
 	// stmt, err := database.Db.Prepare("SELECT id, Text, Done from Todos")
-	stmt, err := database.Db.Prepare("select T.id, T.title, T.address, T.UserID, U.Username from Todos T inner join Users U on T.UserID = U.ID")
+	stmt, err := database.Db.Prepare("select T.id, T.Test, T.Done, T.UserID, U.Username from Todos T inner join Users U on T.UserID = U.ID")
 	if err != nil {
 		log.Fatal(err)
 	}
